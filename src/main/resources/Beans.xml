@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd" default-lazy-init="true"
+    >
+
+    <!--    < context:annotation-config />：仅能够在已经在已经注册过的bean上面起作用。对于没有在spring容器中注册的bean，它并不能执行任何操作。-->
+    <context:annotation-config/>
+
+    <!--    < mvc:annotation-driven /> 是一种简写形式，完全可以手动配置替代这种简写形式，简写形式可以让初学都快速应用默认配置方案。 会自动注册DefaultAnnotationHandlerMapping与AnnotationMethodHandlerAdapter 两个bean,是spring MVC为@Controllers分发请求所必须的。-->
+    <!--    并提供了：数据绑定支持，@NumberFormatannotation支持，@DateTimeFormat支持，@Valid支持，读写XML的支持（JAXB），读写JSON的支持（Jackson）。-->
+
+    <!--    <mvc:annotation-driven />-->
+    <!-- ①：对web包中的所有类进行扫描，以完成Bean创建和自动依赖注入的功能 -->
+    <!--    其中base-package为需要扫描的包（含所有子包） @Service用于标注业务层组件，@Controller用于标注控制层组件（如struts中的action）,
+    @Repository用于标注数据访问组件，即DAO组件，而@Component泛指组件，当组件不好归类的时候，我们可以使用这个注解进行标注。-->
+    <!--    < context:component-scan base-package="XX.XX"/> ：除了具有上面的功能之外，还具有自动将带有@component,@service,@Repository等注解的对象注册到spring容器中的功能。-->
+    <context:component-scan base-package="com.gaotai"/>
+
+    <!--    <bean id="HelloWorld" class="com.gaotai.HelloWorld">-->
+    <!--        <property name="name"  value="Zara!!!!!" />-->
+
+    <!--        &lt;!&ndash; try without passing age and check the result &ndash;&gt;-->
+    <!--    <property name="age"  value="113333"/>-->
+    <!--    </bean>-->
+
+</beans>
