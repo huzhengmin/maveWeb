@@ -5,13 +5,18 @@ import com.gaotai.controller.StudentController;
 import com.gaotai.service.StudentService;
 import com.gaotai.service.lmpl.StudentServiceImpl;
 import com.gaotai.testA;
+import com.gaotai.util.MyUtil;
 import com.sun.deploy.util.StringUtils;
 import com.sun.javafx.collections.MappingChange;
 import jdk.management.resource.ResourceType;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+
 import java.util.*;
+
+import java.util.*;
+import java.util.zip.CheckedOutputStream;
 
 /**
  * @author： hzm
@@ -21,6 +26,14 @@ import java.util.*;
  * @version:
  */
 public class Test {
+    @org.junit.Test
+    public void Test_0()
+    {
+
+        System.out.println(new MyUtil().getStr(new Date()));
+        System.out.println(new MyUtil().getStr("Hello word"));
+    }
+
     @org.junit.Test
     public void main1() {
         System.out.println("dddd");
@@ -144,5 +157,10 @@ public class Test {
                 new ClassPathXmlApplicationContext("Beans.xml");
         StudentService obj = (StudentService) context.getBean("studentServiceImpl");
         obj.show();
+    }
+    @org.junit.Test
+    public void test2()
+    {
+
     }
 }

@@ -9,5 +9,5 @@ package com.gaotai.service;
  */
 public interface StudentService {
     void show();
-
+    void fly();
 }

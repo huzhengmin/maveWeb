@@ -16,4 +16,9 @@ public class StudentServiceImpl implements StudentService {
     public void show() {
         System.out.println("StudentServiceImpl SHOW()");
     }
+
+    @Override
+    public void fly() {
+        System.out.println("stufly");
+    }
 }
