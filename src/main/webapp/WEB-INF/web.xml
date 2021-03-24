@@ -1,7 +1,9 @@
 <!DOCTYPE web-app PUBLIC
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<!-- 加载log4j配置文件  一定要写在web.xml的第一排 -->
 
 <web-app>
+
   <display-name>Archetype Created Web Application</display-name>
 </web-app>

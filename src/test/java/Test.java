@@ -5,10 +5,12 @@ import com.gaotai.controller.StudentController;
 import com.gaotai.service.StudentService;
 import com.gaotai.service.lmpl.StudentServiceImpl;
 import com.gaotai.testA;
+import com.gaotai.util.Log4JUtils;
 import com.gaotai.util.MyUtil;
 import com.sun.deploy.util.StringUtils;
 import com.sun.javafx.collections.MappingChange;
 import jdk.management.resource.ResourceType;
+import org.junit.Before;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -161,6 +163,53 @@ public class Test {
     @org.junit.Test
     public void test2()
     {
+        Integer x = 100; // x里面并不是保存100，保存的是100这个对象的内存地址。
+        Integer y = 100;
+        System.out.println(x == y); // true
 
+        Integer x1 = 128;
+        Integer y1 = 128;
+        System.out.println(x1.intValue() == y1.intValue()); // false
+        int []arr={1,2};
+        for(int i:arr)
+        {
+            System.out.println(i);
+        }
+        List<String> list = new ArrayList<>();
+        for (int i=0;i<10;i++)
+        {
+            list.add(i+"a");
+        }
+        for (String s :list)
+        {
+            System.out.println(s);
+
+        }
+        Iterator<String> iterator = list.listIterator();
+        System.out.println("ddddd");
+
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
+    }
+    @org.junit.Test
+    public void SetTemp()
+    {
+        Set<String> set = new HashSet<>();
+        for(int i=0;i<5;i++)
+        {
+            set.add(i+"");
+        }
+        for(String s:set)
+        {
+            System.out.println(s);
+        }
+
+    }
+    @org.junit.Test
+    public void testLog()
+    {
+        Log4JUtils.logDebug("ERROR:100");
     }
 }

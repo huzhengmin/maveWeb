@@ -3,6 +3,7 @@ import org.junit.Test;
 
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 /**
  * @author： hzm
@@ -15,45 +16,46 @@ public class SetTemp {
     @Test
     public void tem1()
     {
-        HashSet<Integer> hs = new HashSet<>();
+        //创建HashSet集合：
+        Set<String> hashSet = new HashSet<String>();
+        System.out.println("HashSet初始容量大小："+hashSet.size());
 
-        hs.add(5);
-        hs.add(2);
-        hs.add(3);
-        System.out.println(hs.add(4));
-        System.out.println(hs.add(4));  //检验HashSet是否允许重复元素加入
-        System.out.println(hs);    //检验HashSet是否有序
+        //元素添加：
+        hashSet.add("my");
+        hashSet.add("name");
+        hashSet.add("is");
+        hashSet.add("jiaboyan");
+        hashSet.add(",");
+        hashSet.add("hello");
+        hashSet.add("world");
+        hashSet.add("!");
+        System.out.println("HashSet容量大小："+hashSet.size());
 
-        for (Integer i :hs)
-        {
-            System.out.println(i);
+        //迭代器遍历：
+        Iterator<String> iterator = hashSet.iterator();
+        while (iterator.hasNext()){
+            String str = iterator.next();
+            System.out.println(str);
         }
+        //增强for循环
+        for(String str:hashSet){
+            if("jiaboyan".equals(str)){
+                System.out.println("你就是我想要的元素:"+str);
+            }
+            System.out.println(str);
+        }
+
+        //元素删除：
+        hashSet.remove("jiaboyan");
+        System.out.println("HashSet元素大小：" + hashSet.size());
+        hashSet.clear();
+        System.out.println("HashSet元素大小：" + hashSet.size());
+
+        //集合判断：
+        boolean isEmpty = hashSet.isEmpty();
+        System.out.println("HashSet是否为空：" + isEmpty);
+        boolean isContains = hashSet.contains("hello");
+        System.out.println("HashSet是否为空：" + isContains);
     }
-    @Test
-    public void temp2()
-    {
-        HashSet<Student> hs = new HashSet<>();
 
-        hs.add(new Student("yiyi",1));
-        hs.add(new Student("feifei",2));
-        hs.add(new Student("lili",3));
-
-        System.out.println(hs.add(new Student("wawa",4)));
-        System.out.println(hs.add(new Student("wawa",4)));
-        System.out.println("------------第一种打印方式，利用重写的toString（）方法和Println（）直接打印");
-        System.out.println(hs);  //第一种打印方式，利用重写的toString（）方法和Println（）直接打印
-        System.out.println("------------第二种打印方式，增强for循环");
-        for(Student s : hs) {   //第二种打印方式，增强for循环
-            System.out.println(s);
-        }
-        System.out.println("------------第三种打印方式，利用Iteator");   //第三种打印方式，利用Iteator
-        Iterator<Student> it = hs.iterator();
-        while(it.hasNext()) {
-            Student s = it.next();
-            System.out.println(s);
-        }
-
-
-
-    }
 }
