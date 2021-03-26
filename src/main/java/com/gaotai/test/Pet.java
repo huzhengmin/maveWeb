@@ -26,8 +26,12 @@ public abstract class Pet {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Pet pet = (Pet) o;
         return Objects.equals(name, pet.name);
     }
