@@ -1,9 +1,7 @@
 import com.gaotai.Student;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author： hzm
@@ -74,5 +72,89 @@ public class listTemp {
         }
         System.out.println(list);
     }
+    @Test
+    public void test02()
+    {
+        List<String> sList = new ArrayList<>();
+        sList.add("北京");
+        sList.add("上海");
+        sList.add("北京");
+        sList.add("上海");
+        for (String s:sList)
+        {
+            System.out.println(s);
+        }
+        Iterator<String> iList = sList.iterator();
+        while (iList.hasNext())
+        {
+            System.out.println("iterator-->"+iList.next());
+        }
+        System.out.println(sList.get(0));
+    }
+    @Test
+    public void test03()
+    {
+        System.out.println("set-----------");
+        Set<String> sSet = new HashSet<>();
+        sSet.add("北京");
+        sSet.add("上海");
+        sSet.add("北京");
+        sSet.add("上海");
+        sSet.add("重庆");
+        for (String s:sSet)
+        {
+            System.out.println(s);
+        }
+        System.out.println(sSet);
+    }
+    @Test
+    public void test04()
+    {
+        Map<Integer,String> oMap = new HashMap<>() ;
+        oMap.put(0,"北京");
+        oMap.put(1,"上海");
+        oMap.put(0,"重庆");
 
+        Iterator iMap = oMap.keySet().iterator();
+        while (iMap.hasNext())
+        {
+            System.out.println(oMap.get(iMap.next()));
+        }
+        //第二种
+        System.out.println("通过Map.entrySet使用iterator遍历key和value：");
+        Iterator<Map.Entry<Integer, String>> it = oMap.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry<Integer, String> entry = it.next();
+            System.out.println("key= " + entry.getKey() + " and value= " + entry.getValue());
+        }
+
+    }
+    @Test
+    public void test05()
+    {
+        List<String> list=new ArrayList<String>();
+        list.add("Hello");
+        list.add("World");
+        list.add("HAHAHAHA");
+        //第一种遍历方法使用 For-Each 遍历 List
+        for (String str : list) {            //也可以改写 for(int i=0;i<list.size();i++) 这种形式
+            System.out.println(str);
+        }
+
+        //第二种遍历，把链表变为数组相关的内容进行遍历
+        String[] strArray=new String[list.size()];
+        list.toArray(strArray);
+        for(int i=0;i<strArray.length;i++) //这里也可以改写为  for(String str:strArray) 这种形式
+        {
+            System.out.println(strArray[i]);
+        }
+
+        //第三种遍历 使用迭代器进行相关遍历
+
+        Iterator<String> ite=list.iterator();
+        while(ite.hasNext())//判断下一个元素之后有值
+        {
+            System.out.println(ite.next());
+        }
+    }
 }

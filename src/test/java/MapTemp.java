@@ -1,10 +1,7 @@
 import org.junit.Test;
 import org.springframework.util.StringUtils;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author： hzm
@@ -14,6 +11,61 @@ import java.util.Set;
  * @version:
  */
 public class MapTemp {
+    @Test
+    public void test12()
+    {
+        // 创建 HashMap 对象 Sites
+        HashMap<Integer, String> Sites = new HashMap<Integer, String>();
+        // 添加键值对
+        Sites.put(1, "Google");
+        Sites.put(2, "Runoob");
+        Sites.put(3, "Taobao");
+        Sites.put(4, "Zhihu");
+        // 输出 key 和 value
+        for (Integer i : Sites.keySet()) {
+            System.out.println("key: " + i + " value: " + Sites.get(i));
+        }
+        // 返回所有 value 值
+        for(String value: Sites.values()) {
+            // 输出每一个value
+            System.out.print(value + ", ");
+        }
+    }
+    @Test
+    public void test11()
+    {
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("1", "value1");
+        map.put("2", "value2");
+        map.put("3", "value3");
+
+        //第一种：普遍使用，二次取值
+        System.out.println("通过Map.keySet遍历key和value：");
+        for (String key : map.keySet()) {
+            System.out.println("key= "+ key + " and value= " + map.get(key));
+        }
+
+        //第二种
+        System.out.println("通过Map.entrySet使用iterator遍历key和value：");
+        Iterator<Map.Entry<String, String>> it = map.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry<String, String> entry = it.next();
+            System.out.println("key= " + entry.getKey() + " and value= " + entry.getValue());
+        }
+
+        //第三种：推荐，尤其是容量大时
+        System.out.println("通过Map.entrySet遍历key和value");
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            System.out.println("key= " + entry.getKey() + " and value= " + entry.getValue());
+        }
+
+        //第四种
+        System.out.println("通过Map.values()遍历所有的value，但不能遍历key");
+        for (String v : map.values()) {
+            System.out.println("value= " + v);
+        }
+
+    }
     @Test
     public void temp1() {
         HashMap<String, String> map = new HashMap<>();
