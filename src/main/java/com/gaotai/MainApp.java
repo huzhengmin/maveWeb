@@ -8,6 +8,7 @@ package com.gaotai; /**
 
 import com.gaotai.controller.StudentController;
 import com.gaotai.dao.StudengDao;
+import com.gaotai.dao.lmpl.StudengDaoImpl;
 import com.gaotai.entity.StudentEntity;
 import com.gaotai.service.StudentService;
 import org.springframework.context.ApplicationContext;
@@ -25,6 +26,10 @@ public class MainApp {
         StudengDao studengDao = (StudengDao) context.getBean("studengDaoImpl");
         studengDao.show();
         studengDao.showStudent();
+        studengDao.add();
+        StudengDaoImpl iml = new StudengDaoImpl();
+        iml.add();
+
 
         StudentEntity studentEntity = (StudentEntity) context.getBean("studentEntity");
         System.out.println(studentEntity.toString());

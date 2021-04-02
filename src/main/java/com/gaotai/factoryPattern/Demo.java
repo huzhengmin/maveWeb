@@ -14,5 +14,7 @@ public class Demo {
         rectngle.draw();
         Shape square = sf.getShape("square");
         square.draw();
+        Square sq = new Square();
+        sq.draw("name");
     }
 }

@@ -24,4 +24,6 @@ public class StudengDaoImpl implements StudengDao {
         StudentEntity stu = new StudentEntity();
         System.out.println(stu);
     }
+    @Override
+    public void add(){}
 }

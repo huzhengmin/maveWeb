@@ -10,4 +10,5 @@ package com.gaotai.dao;
 public interface StudengDao {
     void show();
     void showStudent();
+    void add();
 }

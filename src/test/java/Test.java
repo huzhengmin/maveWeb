@@ -212,4 +212,19 @@ public class Test {
     {
         Log4JUtils.logDebug("ERROR:100");
     }
+    @org.junit.Test
+    public  void test01(){
+        Object o;
+        String s1 = new String() ;
+        String s2 = new String();
+        System.out.println(s1.equals(s2));
+        s1 = "aaaaaaaaaa01";
+        s2 = "02";
+        System.out.println(s1.equals(s2));
+        s2="aaaaaaaaaa010";
+        System.out.println(s1.equals(s2));
+
+        System.out.println(s1.hashCode()+"-->"+s2.hashCode());
+        System.out.println(new EnumTest().getClass());
+    }
 }

@@ -13,4 +13,8 @@ public class Square  implements  Shape{
     public void draw() {
         System.out.println("Inside Square::draw() method.");
     }
+    public  void draw(String name)
+    {
+        System.out.println(String.format("画了{0}",name));
+    }
 }

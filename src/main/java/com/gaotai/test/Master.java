@@ -17,6 +17,7 @@ public class Master {
 
     public static void main(String[] args) {
         Pet cat = new Cat("汤姆");
+
         Pet dog = new Dog("高菲");
         feed(cat);
         feed(dog);
