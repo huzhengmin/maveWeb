@@ -22,10 +22,12 @@ public class SetTemp {
 
         //元素添加：
         hashSet.add("my");
+        hashSet.add("my");
         hashSet.add("name");
         hashSet.add("is");
         hashSet.add("jiaboyan");
         hashSet.add(",");
+        hashSet.add("hello");
         hashSet.add("hello");
         hashSet.add("world");
         hashSet.add("!");
